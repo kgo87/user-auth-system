@@ -1,0 +1,29 @@
+{
+  "name": "user-auth-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgo87/user-auth-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgo87/user-auth-system/issues"
+  },
+  "homepage": "https://github.com/kgo87/user-auth-system#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.2",
+    "nodemon": "^2.0.20"
+  }
+}
