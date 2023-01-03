@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import axios from "axios";
 
@@ -8,6 +8,7 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
 
     const registerUser = async () => {
         if (password === confirmPassword) {
@@ -20,10 +21,13 @@ function Register() {
             console.log(userObj);
             try 
             {
+                toast.loading('Loading...')
                 const response = await axios.post('/api/auth/register', userObj);
+                toast.dismiss();
                 if (response.data.success) 
                 {
                     toast.success(response.data.message);
+                    navigate("/");
                 } 
                 else 
                 {

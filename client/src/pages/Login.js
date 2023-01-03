@@ -18,12 +18,14 @@ function Login()  {
         console.log(userObj);
         try 
         {
+            toast.loading('Loading...')
             const response = await axios.post('/api/auth/login', userObj);
             toast.dismiss();
             if (response.data.success) 
             {
                 toast.success(response.data.message);
                 localStorage.setItem("user", response.data.data);
+                console.log(response.data.data)
                 navigate("/");
             } 
             else {
