@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
+import VerifyEmail from './pages/VerifyEmail';
+import ResetPassword from './pages/ResetPassword';
 
 function App() {
   return (
@@ -31,6 +33,22 @@ function App() {
           element={
             <PublicRoutes>
               <Register />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/verifyemail/:token"
+          element={
+            <PublicRoutes>
+              <VerifyEmail />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/resetpassword/:token"
+          element={
+            <PublicRoutes>
+              <ResetPassword />
             </PublicRoutes>
           }
         />
