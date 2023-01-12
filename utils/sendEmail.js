@@ -20,7 +20,7 @@ module.exports = async (user, mailType) => {
 
     const encryptedToken = bcrypt
       .hashSync(user._id.toString(), 10)
-      .replace("/", "");
+      .replace(/["/"]/g, "");
     const token = new Token({
       userid: user._id,
       token: encryptedToken,
