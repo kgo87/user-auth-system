@@ -44,11 +44,18 @@ function VerifyEmail() {
         </h1>
       )}
 
-      {emailVerified == "true" && (
-        <h1 className="text-primary text-4xl">
-          Your email verified successfully
-        </h1>
-      )}
+          {emailVerified == "true" && (
+              <div>
+                  <h1 className="text-primary text-4xl">
+                      Your email verified successfully. Please navigate to LOGIN page.</h1>
+                  <button className="border border-primary px-10 py-2 text-primary"
+                      onClick={() => 
+                        {
+                          localStorage.clear();
+                          navigate("/login");
+                        }}>LOGIN PAGE</button>
+              </div>
+          )}
 
       {emailVerified == "false" && (
         <h1 className="text-primary text-4xl">Invalid or Expired Token</h1>
